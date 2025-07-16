@@ -1,0 +1,8 @@
+clang -arch arm64e \
+  -isysroot <yourSDKPath> \
+  -dynamiclib -current_version 1.0 -compatibility_version 1.0 \
+  -fvisibility=hidden \
+  -o libExclaves.A.dylib Exclaves.c
+
+
+codesign -f -s - libExclaves.A.dylib
